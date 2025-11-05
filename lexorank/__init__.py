@@ -102,7 +102,7 @@ def get_rank_between(left: str, right: str) -> str:
 
     mid = (rank_to_int(left) + rank_to_int(right)) // 2
     
-    return int_to_rank_with_length(mid, maxlen)
+    return int_to_rank_with_length(mid, len(left))
     
 
 '''get the rank before at the head'''
@@ -116,6 +116,14 @@ def get_rank_after(left:str) -> str:
     tail = "z"*len(left)
     return get_rank_between(left, tail)
 
-if __name__ == "__main__":
+__all__ = [
+    'rank_to_int',
+    'int_to_rank_with_length',
+    'int_to_rank',
+    'initialize_lexorank',
+    'pad_right',
+    'get_rank_between',
+    'get_rank_before',
+    'get_rank_after',
+]
 
-    print(get_rank_between("0","1"))

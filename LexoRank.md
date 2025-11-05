@@ -78,4 +78,3 @@ So I do some researchs and try to implement lexorank for my LCIA system, which i
 
   When initializing the rank, we try to evenly distribute the gap and generate the ranks as short as possible. Since we need remain the gap for the situation inserting at the head and tail, so when elements less than 35 we can initialize the rank with 1 digit. Otherwise, we use two digit for initialization, then it can support 36*36+36 - near 1k elements.
 
-* 
