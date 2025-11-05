@@ -5,6 +5,7 @@ BASE36 = "0123456789abcdefghijklmnopqrstuvwxyz"
 def rank_to_int(rank: str) -> int:
     return int(rank, 36)
 
+
 '''convert an integer to a lexorank string(base36) with fixed length(used for initialization)'''
 def int_to_rank_with_length(value: int, length: int) -> str:
     """    
@@ -30,6 +31,7 @@ def int_to_rank_with_length(value: int, length: int) -> str:
         result = "0" * (length - len(result)) + result
     
     return result
+
 
 '''convert an integer to a lexorank string(base36)'''
 def int_to_rank(value: int) -> str:
@@ -77,6 +79,7 @@ def initialize_lexorank(num: int) -> list[str]:
     
     return result
 
+
 '''pad the rank to the right with '0' to the length'''
 def pad_right(rank: str, length: int) -> str:
     if len(rank) < length:
@@ -95,7 +98,7 @@ def get_rank_between(left: str, right: str) -> str:
 
     if rank_to_int(right) - rank_to_int(left) <= 1:
         left += "0"
-        right += "z"
+        right += "0"
 
     mid = (rank_to_int(left) + rank_to_int(right)) // 2
     
@@ -107,6 +110,7 @@ def get_rank_before(right:str) -> str:
     mid = (rank_to_int(right)) // 2
     return int_to_rank(mid)
 
+
 '''get the rank after at the tail'''
 def get_rank_after(left:str) -> str:
     tail = "z"*len(left)
@@ -114,4 +118,4 @@ def get_rank_after(left:str) -> str:
 
 if __name__ == "__main__":
 
-    print(initialize_lexorank(500))
+    print(get_rank_between("0","1"))
