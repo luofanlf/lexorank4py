@@ -37,8 +37,8 @@ So I do some researchs and try to implement lexorank for my LCIA system, which i
   It is a method of ordering strings (or sequences) in the same way words are arranged in a dictionary. It compares elements from left to right, one character at a time, using their numerical or alphabetical values. By default, if we store the rank in text in database. It will be sorted by lexographic order if we order by that column.
 
 * **Generating new rank**
-
-​	Generating a new rank between elements is the most common operation in lexorank. The logic is in this way: First, get the 	rank of left element("a") and right element("z"). Second, convert rank into int: a to 10, z to 35. Third, sum the value and floor   	divided by 2 :10+35）/2 ->get  22.Last, convert into rank and insert: insert “m” in the middle. But there will be situations when 	no gap exist between the target elements like "a" and "b"
+  
+  ​	Generating a new rank between elements is the most common operation in lexorank. The logic is in this way: First, get the 	rank of left element("a") and right element("z"). Second, convert rank into int: a to 10, z to 35. Third, sum the value and floor   	divided by 2 :10+35）/2 ->get  22.Last, convert into rank and insert: insert “m” in the middle. But there will be situations when 	no gap exist between the target elements like "a" and "b"
 
 * **Shortfall of lexorank**
 
