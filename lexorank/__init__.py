@@ -96,11 +96,14 @@ def get_rank_between(left: str, right: str) -> str:
     left = pad_right(left, maxlen)
     right = pad_right(right, maxlen)
 
-    if rank_to_int(right) - rank_to_int(left) <= 1:
-        left += "0"
-        right += "0"
+    left_int = rank_to_int(left)
+    right_int = rank_to_int(right)
 
-    mid = (rank_to_int(left) + rank_to_int(right)) // 2
+    if right_int - left_int <= 1:
+        left_int += 1
+        right_int += 1
+
+    mid = (left_int + right_int) // 2
     
     return int_to_rank_with_length(mid, len(left))
     
